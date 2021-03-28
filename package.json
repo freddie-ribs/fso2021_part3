@@ -1,0 +1,19 @@
+{
+  "name": "fso2021_part3",
+  "version": "1.0.0",
+  "description": "fullstackopen part3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddie-ribs/fso2021_part3.git"
+  },
+  "author": "frfreddie.ribs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freddie-ribs/fso2021_part3/issues"
+  },
+  "homepage": "https://github.com/freddie-ribs/fso2021_part3#readme"
+}
