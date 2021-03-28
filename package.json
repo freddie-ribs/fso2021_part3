@@ -1,19 +1,27 @@
 {
-  "name": "fso2021_part3",
-  "version": "1.0.0",
-  "description": "fullstackopen part3",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/freddie-ribs/fso2021_part3.git"
-  },
-  "author": "frfreddie.ribs",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/freddie-ribs/fso2021_part3/issues"
-  },
-  "homepage": "https://github.com/freddie-ribs/fso2021_part3#readme"
+	"name": "fso2021_part3",
+	"version": "1.0.0",
+	"description": "fullstackopen part3",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/freddie-ribs/fso2021_part3.git"
+	},
+	"author": "frfreddie.ribs",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/freddie-ribs/fso2021_part3/issues"
+	},
+	"homepage": "https://github.com/freddie-ribs/fso2021_part3#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
+	}
 }
