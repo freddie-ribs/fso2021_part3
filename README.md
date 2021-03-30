@@ -1,1 +1,1 @@
-https://vast-earth-70136.herokuapp.com/api/persons
+https://vast-earth-70136.herokuapp.com
