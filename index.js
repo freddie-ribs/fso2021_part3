@@ -19,6 +19,10 @@ const errorHandler = (err, req, res, next) => {
 	next()
 }
 
+const unknownEndpoint = (err, req, res, next) => {
+	res.status(404).send({ error: "unkown endpoint" })
+}
+
 morgan.token("custom", (req, res) => {
 	return JSON.stringify(req.body)
 })
@@ -83,6 +87,17 @@ app.put("/api/persons/:id", (req, res, next) => {
 		.then(updatedPerson => res.json(updatedPerson))
 		.catch(err => next(err))
 })
+
+app.get("/info", (req, res) => {
+	Person.find({}).then(persons => {
+		const info = `Phonebook has info for ${persons.length} people`
+		const today = new Date()
+		const date = String(today)
+		res.send(`<p>${info}</p><p>${date}</p>`)
+	})
+})
+
+app.use(unknownEndpoint)
 
 app.use(errorHandler)
 
