@@ -47,5 +47,13 @@ app.post("/api/persons", (req, res) => {
 	person.save().then(savedContact => res.json(savedContact))
 })
 
+app.delete("/api/persons/:id", (req, res) => {
+	Person.findByIdAndRemove(req.params.id)
+		.then(result => {
+			res.status(204).end()
+		})
+		.catch(err => res.status(500).end())
+})
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
