@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 if (process.argv.length < 3) {
 	console.log(
-		`Please provide the password as an argument: node mongo.js <password>`
+		"Please provide the password as an argument: node mongo.js <password>"
 	)
 	process.exit(1)
 }
@@ -23,7 +23,7 @@ mongoose
 		useFindAndModify: false,
 		useCreateIndex: true,
 	})
-	.then(res => console.log("connected to db"))
+	.then(() => console.log("connected to db"))
 
 const contactSchema = new mongoose.Schema({
 	name: String,
@@ -46,7 +46,7 @@ if (process.argv.length === 3) {
 }
 
 if (process.argv.length === 5) {
-	contact.save().then(res => {
+	contact.save().then(() => {
 		console.log(`${contact.name} has been added to phonebook`)
 		mongoose.connection.close()
 	})

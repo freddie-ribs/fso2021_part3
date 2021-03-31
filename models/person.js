@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 const uniqueValidator = require("mongoose-unique-validator")
 
-const PORT = process.env.PORT
 const MONGO_URI = process.env.MONGO_URI
 
 mongoose
@@ -11,7 +10,7 @@ mongoose
 		useFindAndModify: false,
 		useCreateIndex: true,
 	})
-	.then(res => console.log("connected to db"))
+	.then(() => console.log("connected to db"))
 	.catch(err =>
 		console.log("error occured while connecting to DB", err.message)
 	)

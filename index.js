@@ -27,7 +27,7 @@ const unknownEndpoint = (req, res) => {
 	res.status(404).send({ error: "unkown endpoint" })
 }
 
-morgan.token("custom", (req, res) => {
+morgan.token("custom", req => {
 	return JSON.stringify(req.body)
 })
 
@@ -76,7 +76,7 @@ app.post("/api/persons", (req, res, next) => {
 
 app.delete("/api/persons/:id", (req, res, next) => {
 	Person.findByIdAndRemove(req.params.id)
-		.then(result => {
+		.then(() => {
 			res.status(204).end()
 		})
 		.catch(err => next(err))
