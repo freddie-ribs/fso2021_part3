@@ -12,14 +12,18 @@ app.use(express.static("build"))
 const errorHandler = (err, req, res, next) => {
 	console.log(err.message)
 
-	if (err.message === "CastError") {
+	if (err.name === "CastError") {
 		return res.status(400).send({ error: "malformatter id" })
+	}
+
+	if (err.name === "ValidationError") {
+		return res.status(400).send({ error: "person name must be unique" })
 	}
 
 	next()
 }
 
-const unknownEndpoint = (err, req, res, next) => {
+const unknownEndpoint = (req, res) => {
 	res.status(404).send({ error: "unkown endpoint" })
 }
 
@@ -64,7 +68,10 @@ app.post("/api/persons", (req, res, next) => {
 		number: contact.number,
 	})
 
-	person.save().then(savedContact => res.json(savedContact))
+	person
+		.save()
+		.then(savedContact => res.json(savedContact))
+		.catch(err => next(err))
 })
 
 app.delete("/api/persons/:id", (req, res, next) => {
