@@ -21,6 +21,15 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Al",
+  "number": "123-123-123"
+} 
+
+###
 
 POST http://localhost:3001/api/persons
 Content-Type: application/json
